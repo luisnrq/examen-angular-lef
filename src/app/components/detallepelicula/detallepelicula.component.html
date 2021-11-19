@@ -1,0 +1,39 @@
+<div>
+    <h2 class="text-center my-4">Detalle de pelicula: {{pelialhijo.titulo}}</h2>
+
+    <table class="table table-hover text-center mb-4">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Director</th>
+                <!-- <th>Genero</th>
+                <th>Nacionalidad</th> -->
+                <th>Duración</th>
+                <th>Fecha Estreno</th>
+                <th>Precio</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{pelialhijo.titulo}}</td>
+                <td>{{pelialhijo.director}}</td>
+                <!-- <td>{{genero}}</td>
+                <td>{{nacionalidad}}</td> -->
+                <td>{{pelialhijo.duracion}}</td>
+                <td>{{pelialhijo.fechaEstreno}}</td>
+                <td>{{pelialhijo.precio}}€</td>
+                <td><button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                        class="btn btn-danger btn-sm">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-center mb-4">
+        <iframe class="mb-4" width="560" height="315" src="{{'https://www.youtube.com/embed/' + pelialhijo.youTube}}"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+
+</div>

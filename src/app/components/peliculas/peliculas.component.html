@@ -1,0 +1,46 @@
+<div class="container">
+    <h1 class="text-center mb-4">{{titulo}}</h1>
+    <!--
+    <div v-if="mostrarMensajeEliminado">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>!Eliminada!</strong> Pelicula eliminada con exito.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+-->
+
+
+    <div *ngIf="mostrardetalle">
+        <app-detallepelicula [pelialhijo]="pelialhijo"></app-detallepelicula>
+    </div>
+
+
+    <div *ngIf="mostrar; else carga">
+        <div class="row">
+            <div *ngFor="let peli of peliculas" class="col-12 col-md-6  col-lg-3">
+                <div class="card mx-auto text-center mb-4" style="width: 18rem;">
+                    <img src="{{peli.foto}}" class="card-img-top" alt="imagen" style="height:300px">
+                    <h5 class="card-title">{{peli.titulo}}</h5>
+                    <div class="card-body">
+                        <p class="card-text">{{peli.argumento}}</p>
+                        <a class="btn btn-danger mx-1" href="{{peli.enlaceVideo}}" target="_blank">YouTube</a>
+                        <button (click)="mostrarDetallePelicula(peli)"
+                            class="btn btn-outline-danger mx-1">Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <ng-template #carga>
+        <div class="d-flex justify-content-center mb-4">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+        </div>
+    </ng-template>
+
+
+
+</div>
